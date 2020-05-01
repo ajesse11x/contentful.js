@@ -47,7 +47,9 @@
     "devdep:install": "npm run devdep:build && rm -rf node_modules/contentful-sdk-core && npm install ../contentful-sdk-core && npm run devdep:clean",
     "devdep:uninstall": "npm run devdep:clean && rimraf node_modules/contentful-sdk-core",
     "precommit": "npm run lint",
-    "prepush": "npm run test:prepush"
+    "prepush": "npm run test:prepush",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "types": "./index.d.ts",
   "files": [
@@ -62,7 +64,8 @@
     "contentful-resolve-response": "^1.1.4",
     "contentful-sdk-core": "^6.0.1",
     "json-stringify-safe": "^5.0.1",
-    "lodash": "^4.17.5"
+    "lodash": "^4.17.5",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "babel-cli": "^6.7.5",
@@ -147,5 +150,6 @@
       "path": "./dist/contentful.node.min.js",
       "maxSize": "20Kb"
     }
-  ]
+  ],
+  "snyk": true
 }
